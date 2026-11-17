@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country and Capital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        select {
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        /* CSS customizing font properties of the capital */
+        #capital {
+            color: #0d6efd;
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Country and Capital Selector</h2>
+
+    <label for="countrySelect">Select a Country: </label>
+    <select id="countrySelect" onchange="showCapital()">
+        <option value="">-- Select Country --</option>
+        <option value="New Delhi">India</option>
+        <option value="Washington, D.C.">USA</option>
+        <option value="London">UK</option>
+        <option value="Paris">France</option>
+        <option value="Tokyo">Japan</option>
+    </select>
+
+    <!-- Capital is printed next to the list -->
+    <span id="capital"></span>
+
+    <script>
+        function showCapital() {
+            var select = document.getElementById("countrySelect");
+            var capitalSpan = document.getElementById("capital");
+
+            if (select.value !== "") {
+                capitalSpan.textContent = "Capital: " + select.value;
+            } else {
+                capitalSpan.textContent = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
